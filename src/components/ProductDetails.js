@@ -23,23 +23,23 @@ const ProductDetails = ({
       )}
 
       <div className="product__details_text">
-        <h2>{productName}</h2>
+        <h2>{productName.replace(/%20/g, ` `)}</h2>
         {categories && (
           <p>
-            <span className="title">Catégories</span> {categories}
+            <span className="title">Catégories</span> {categories.replace(/%20/g, ` `)}
           </p>
         )}
 
         {ingredientsText && (
           <p>
-            <span className="title">Ingrédients</span>{" "}
+            <span className="title">Ingrédients</span>
             {ingredientsText.replace(/%20/g, ` `)}
           </p>
         )}
 
         {allergensImported && (
           <p>
-            <span className="title">Allergènes</span> {allergensImported}
+            <span className="title">Allergènes</span> {allergensImported.replace(/%20/g, ` `)}
           </p>
         )}
       </div>
