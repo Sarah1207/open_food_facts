@@ -132,6 +132,19 @@ body {
   }
 }
 
+//ERROR PAGE
+.error__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .img__error {
+    height: 80vh;
+    width: auto;
+    text-align: center;
+    margin: auto;
+  }
+}
+
 // LOADER
 .container__loader {
   display: flex;
