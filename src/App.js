@@ -5,7 +5,6 @@ import Navigation from "./components/Navigation";
 
 const App = () => {
   const queryClient = new QueryClient();
-
   return (
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
