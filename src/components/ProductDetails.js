@@ -1,15 +1,15 @@
 import React from "react";
 import PlaceholderImg from "./PlaceholderImg";
 
-function ProductDetails({
+const ProductDetails = ({
   productName,
   categories,
   ingredientsText,
   allergensImported,
   imageUrl,
-}) {
+}) => {
   return (
-    <div className="product__details__container">
+    <div className="product__details__container" data-testid="productDetails">
       {imageUrl ? (
         <div className="product__details__img__container">
           <img
@@ -32,7 +32,8 @@ function ProductDetails({
 
         {ingredientsText && (
           <p>
-            <span className="title">Ingrédients</span> {ingredientsText}
+            <span className="title">Ingrédients</span>{" "}
+            {ingredientsText.replace(/%20/g, ` `)}
           </p>
         )}
 
@@ -44,6 +45,6 @@ function ProductDetails({
       </div>
     </div>
   );
-}
+};
 
 export default ProductDetails;

@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonHome from "../components/ButtonHome";
 
-function Error() {
+const Error = () => {
   return (
     <div className="error__container">
       <ButtonHome />
@@ -12,6 +12,6 @@ function Error() {
       />
     </div>
   );
-}
+};
 
 export default Error;

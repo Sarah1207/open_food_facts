@@ -14,7 +14,7 @@ const ProductCard = ({
   const imageEncoded = encodeURIComponent(imageUrl);
 
   return (
-    <div className="product__card">
+    <div className="product__card" data-testid="productCard">
       <div className="product__card__img__container">
         {productImgCard ? (
           <img
@@ -29,6 +29,7 @@ const ProductCard = ({
 
       <p className="product__card__name">{productName}</p>
       <Link
+        role="link"
         to={`/product/${imageEncoded}/${productName}/${productCategories}/${productIngredientsText}/${productAllergensImported}/${productId}`}
         className="button"
       >

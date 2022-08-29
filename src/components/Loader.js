@@ -2,8 +2,8 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div class="container__loader">
-      <div class="loader"></div>
+    <div className="container__loader" data-testid="loader">
+      <div className="loader"></div>
     </div>
   );
 };

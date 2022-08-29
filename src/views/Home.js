@@ -30,7 +30,11 @@ const Home = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="products__list__container" data-testid="productList">
+        <div
+          className="products__list__container"
+          data-testid="productList"
+          role="list"
+        >
           {data.products
             .filter(searchByProductName(search.get("product_name")))
             .map((product) => {

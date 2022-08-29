@@ -9,6 +9,7 @@ const SearchInput = ({ value, handleChange, placeholder }) => {
         placeholder={placeholder}
         onChange={handleChange}
         className="input"
+        role="search"
       />
     </div>
   );

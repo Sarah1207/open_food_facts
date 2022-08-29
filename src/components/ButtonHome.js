@@ -9,6 +9,7 @@ const ButtonHome = () => {
       onClick={() => {
         navigate("/", { replace: true });
       }}
+      role="link"
     >
       Back Home
     </button>
