@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+Test technique pour le poste de développeur front-end
+Introduction
+Dans le cadre de la recherche du candidat pour le poste de développeur front-end à La Ruche Qui Dit Oui!, nous avons préparé un test technique.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Objectifs
+Le but est d'évaluer le candidat sur sa manière de gérer des appels à une API, Open Food Facts, ainsi que de traiter les données reçues en React.
 
-## Available Scripts
+Consignes
+Vous allez faire un moteur de recherche très simple qui doit permettre de rechercher des produits par nom, de les afficher dans une liste et de faire une page pour voir chaque produit. Nous vous encourageons à utiliser Create React App avec React Router. Le code doit être hébergé sur un gestionnaire de version git au choix. (exemples: github, gitlab, bitbucket) La qualité du code sera aussi évaluée.
 
-In the project directory, you can run:
+Le moteur de recherche
+Cette première partie doit se servir de l'endpoint de recherche. Une simple recherche par nom suffit, la pagination est optionnelle. Le résultat de cette recherche doit apparaitre sous forme de liste avec les informations suivantes :
 
-### `npm start`
+le nom du produit : product_name
+la photo du produit : image_front_small_url
+un lien vers la page produit : en utilisant id
+Vous pouvez utiliser l'URL suivante :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`https://world.openfoodfacts.org/cgi/search.pl?search_terms=${searchTerm}&search_simple=1&action=process&fields=id%2Cproduct_name%2Cimage_front_small_url&json=1&page=1&page_size=24`
+L'affichage d'un produit
+La page d'un produit doit en n'afficher qu'un seul. Vous pouvez vous servir de cet endpoint. Les informations requises sur le produit sont les suivantes :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+le nom du produit : product_name
+ses catégories : categories
+la photo du produit : image_front_url
+la liste de ses allergènes : allergens_hierarchy
+ses ingrédients : ingredients_text
+Vous pouvez utiliser l'URL suivante :
 
-### `npm test`
+`https://world.openfoodfacts.org/api/v0/product/${code}.json?fields=product_name%2Ccategories%2Cimage_front_url%2Callergens_hierarchy%2Cingredients_text`
+Notes
+Il n'y a pas de limite de temps pour faire ce test.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Si vous avez des questions, n'hésitez pas à les poser.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Bon courage!
